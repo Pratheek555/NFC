@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 app.use(express.json());
 
-const {product} = require("../src/db");
+const {product, product} = require("../src/db");
 const { create } = require("domain");
 
 app.get("/home", function(req, res){
@@ -26,9 +26,17 @@ app.post("/create", async function(req, res){
     })
 })
 
-app.post("/home", function(req, res){
-
+app.get("/pricing", async function(req, res){
+    const id = req.query.id;
+    
+    const product = await product.findOne({id});
+    
+    if(product) {
+        res.json(product)
+    }
+    
 })
+
 
 
 
