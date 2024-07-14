@@ -29,7 +29,7 @@ app.post("/create", async function(req, res){
 app.get("/pricing", async function(req, res){
     const id = req.query.id;
     
-    const product = await product.findOne({id});
+    const foundProduct = await product.findOne({id});
 
     if(product) {
         res.json(product)
