@@ -4,7 +4,7 @@ mongoose.connect("mongodb+srv://skandansv:CRaGATBcPg5IGrms@cluster0.3loeath.mong
 const productSchema = mongoose.Schema({
     id: Number,
     name: String,
-    Price: Number,
+    price: Number,
 })
 
 const product = mongoose.model("products", productSchema);
