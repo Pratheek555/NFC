@@ -32,7 +32,7 @@ app.get("/pricing", async function(req, res){
     const foundProduct = await product.findOne({id});
 
     if(product) {
-        res.json(product)
+        res.json(foundProduct)
     }
     
 })
