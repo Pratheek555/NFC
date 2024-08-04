@@ -83,6 +83,11 @@ app.get("/pricing", async function(req, res){
 //     }
 // })
 
+app.post('/reset-products', (req, res) => {
+    scannedProducts = [];
+    res.json({ message: 'Scanned products have been reset.' });
+});
+
 
 
 app.listen(port)
